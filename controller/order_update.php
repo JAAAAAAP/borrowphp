@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST["amount"]) && $_POST["id"]) {
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
     include_once('../plugin/script.php');
 
     $id = $_POST['id'];
@@ -26,7 +26,7 @@ if (isset($_POST["amount"]) && $_POST["id"]) {
                     });
                 });
             </script>";
-            header("refresh:1.5; url=/jaa/bookingphp/public/order.php");
+            header("refresh:1.5; url=/jaa/borrowphp/public/order.php");
             $conn = null;
         }
     } else {
@@ -41,7 +41,7 @@ if (isset($_POST["amount"]) && $_POST["id"]) {
                 });
             });
         </script>";
-        header("refresh:1.5; url=/jaa/bookingphp/public/order.php");
+        header("refresh:1.5; url=/jaa/borrowphp/public/order.php");
         $conn = null;
     }
 }

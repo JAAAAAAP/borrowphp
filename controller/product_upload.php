@@ -1,12 +1,12 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/vendor/autoload.php';
 
 use Intervention\Image\ImageManagerStatic as Image;
 
 $targetDir = "../public/img/";
 
 if (isset($_POST['submit'])) {
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
     include_once('../plugin/script.php');
 
     if (isset($_POST['product_name']) && isset($_POST['amount'])) {
@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
                             });
                         });
                     </script>";
-            header("refresh:1.5; url=/jaa/bookingphp/public/admin/admin.php?pt=upload");
+            header("refresh:1.5; url=/jaa/borrowphp/public/admin/admin.php?pt=upload");
         } else {
             $tmpname = $_FILES['fileupload']['tmp_name'];
             $image = Image::make($tmpname)->resize(800, null, function ($constraint) {
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
                     $query->bindParam(":sn_products", $sn_product, PDO::PARAM_STR);
                     $query->execute();
                     echo '<script>document.getElementById("loading-spinner").classList.add("hidden");</script>';
-                    echo "<script>window.location.href='/jaa/bookingphp/public/admin/admin.php?pt=upload'</script>";
+                    echo "<script>window.location.href='/jaa/borrowphp/public/admin/admin.php?pt=upload'</script>";
                     $conn = null;
                 } catch (PDOException $e) {
                     echo $e->getMessage();
@@ -65,11 +65,11 @@ if (isset($_POST['submit'])) {
                             });
                         });
                     </script>";
-                header("refresh:1.5; url=/jaa/bookingphp/public/admin/admin.php?pt=upload");
+                header("refresh:1.5; url=/jaa/borrowphp/public/admin/admin.php?pt=upload");
             }
         }
     } else {
         echo "<script>alert('Please enter both name and amount');</script>";
-        echo "<script>window.location.href='/jaa/bookingphp/public/admin/admin.php?pt=upload';</script>";
+        echo "<script>window.location.href='/jaa/borrowphp/public/admin/admin.php?pt=upload';</script>";
     }
 }

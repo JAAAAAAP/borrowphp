@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
 
 
 $sql = "SELECT COUNT(*) FROM products";
@@ -38,7 +38,7 @@ $num_exit = count($exit_rs);
 
     <div class="flex flex-col md:flex-row mx-4 mt-4 gap-6 justify-center items-center">
         <!-- จำนวนคนที่ยืม -->
-        <div class="flex w-5 md:w-1/4 justify-center items-center rounded-2xl h-40 bg-base-100 shadow-xl">
+        <div class="flex w-full md:w-1/4 justify-center items-center rounded-2xl h-40 bg-base-100 shadow-xl">
             <a href="admin.php?pt=status">
                 <figure class="flex items-center justify-center mt-3 text-7xl">
                     <i class='bx bx-user'></i>
@@ -52,7 +52,7 @@ $num_exit = count($exit_rs);
 
         <!-- เลยกำหนด -->
 
-        <div class="flex w-5 md:w-1/4 justify-center items-center rounded-2xl  h-40 bg-base-100 shadow-xl">
+        <div class="flex w-full md:w-1/4 justify-center items-center rounded-2xl  h-40 bg-base-100 shadow-xl">
             <a href="admin.php?pt=status&&status=late">
                 <figure class="flex items-center justify-center mt-3 text-7xl">
                     <i class='bx bx-time-five'></i>
@@ -66,7 +66,7 @@ $num_exit = count($exit_rs);
 
         <!-- จำนวนของ -->
 
-        <div class="flex w-5 md:w-1/4 justify-center items-center rounded-2xl  h-40 bg-base-100 shadow-xl">
+        <div class="flex w-full md:w-1/4 justify-center items-center rounded-2xl  h-40 bg-base-100 shadow-xl">
             <a href="admin.php?pt=upload">
                 <figure class="flex items-center justify-center mt-3 text-7xl">
                     <i class='bx bx-archive-in'></i>
@@ -83,3 +83,4 @@ $num_exit = count($exit_rs);
 
     
 </div>
+

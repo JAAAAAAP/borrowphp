@@ -29,7 +29,7 @@ $url = $_SERVER['REQUEST_URI'];
 <nav class="navbar sticky top-0 w-full z-50 justify-between bg-base-200 shadow-lg">
     <div class="flex">
         <figure class="mx-4">
-            <a href="#"><img class="w-36 md:w-56" src="/jaa/bookingphp/public/img/logo.png" alt=""></a>
+            <a href="#"><img class="w-36 md:w-56" src="/jaa/borrowphp/public/img/logo.png" alt=""></a>
         </figure>
     </div>
     <ul class="flex flex-row-reverse">
@@ -53,7 +53,7 @@ $url = $_SERVER['REQUEST_URI'];
                 <div class=" indicator <?= $display ?>">
 
                     <span class="indicator-item badge badge-primary top-1 right-2 <?= $display ?>"><?= $count ?></span>
-                    <a href="\jaa\bookingphp\public\order.php" class="text-base mx-2 btn btn-ghost uppercase">รายการยืม</a>
+                    <a href="\jaa\borrowphp\public\order.php" class="text-base mx-2 btn btn-ghost uppercase">รายการยืม</a>
                 </div>
             </li>
 
@@ -61,7 +61,7 @@ $url = $_SERVER['REQUEST_URI'];
                 <div class="indicator <?= $order_display ?>">
 
                     <span class="indicator-item badge badge-primary top-1 right-2 <?= $order_display ?>"><?= $order_count ?></span>
-                    <a href="\jaa\bookingphp\public\approve.php" class="text-base mx-2 btn btn-ghost uppercase">การอนุมัติ</a>
+                    <a href="\jaa\borrowphp\public\approve.php" class="text-base mx-2 btn btn-ghost uppercase">การอนุมัติ</a>
                 </div>
             </li>
         <?php
@@ -71,7 +71,7 @@ $url = $_SERVER['REQUEST_URI'];
         <?php
         }
         ?>
-        <li class="hidden md:block"><a href="\jaa\bookingphp\public\index.php" class="text-base mx-2 btn btn-ghost">หน้าแรก</a></li>
+        <li class="hidden md:block"><a href="\jaa\borrowphp\public\index.php" class="text-base mx-2 btn btn-ghost">หน้าแรก</a></li>
         <li class="hidden md:block"><a href="#" class="text-base mx-2 btn btn-ghost">ติดต่อ</a></li>
 
     </ul>

@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
 include_once('../plugin/script.php');
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -24,7 +24,7 @@ if (isset($_SESSION['id'])) {
 
 
             if ($oder_query) {
-                echo "<script>window.location.href='/jaa/bookingphp/public/index.php'</script>";
+                echo "<script>window.location.href='/jaa/borrowphp/public/index.php'</script>";
                 $conn = null;
             }
         } else {
@@ -39,7 +39,7 @@ if (isset($_SESSION['id'])) {
                 });
             });
         </script>";
-            header("refresh:1.5; url=/jaa/bookingphp/public/index.php");
+            header("refresh:1.5; url=/jaa/borrowphp/public/index.php");
             $conn = null;
         }
     }
@@ -54,6 +54,6 @@ if (isset($_SESSION['id'])) {
                 });
             });
         </script>";
-    header("refresh:1.5; url=/jaa/bookingphp/public/index.php");
+    header("refresh:1.5; url=/jaa/borrowphp/public/index.php");
     $conn = null;
 }

@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
 
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
@@ -21,9 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['role'] = $row['role'];
 
             if ($_SESSION['role'] == 0) {
-                $response['redirect'] = '/jaa/bookingphp/public/index.php';
+                $response['redirect'] = '/jaa/borrowphp/public/index.php';
             } elseif ($_SESSION["role"] == 1) {
-                $response['redirect'] = '/jaa/bookingphp/public/admin/admin.php';
+                $response['redirect'] = '/jaa/borrowphp/public/admin/admin.php';
             }
             http_response_code(200);
             echo json_encode($response);

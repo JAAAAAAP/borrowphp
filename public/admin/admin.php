@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["role"] == "1" ? " " :  header("Location:/jaa/bookingphp/public/index.php") . exit;
+$_SESSION["role"] == "1" ? " " :  header("Location:/public/index.php") . exit;
 ?>
 
 
@@ -27,18 +27,17 @@ $_SESSION["role"] == "1" ? " " :  header("Location:/jaa/bookingphp/public/index.
 
 
 
-    <div class="flex flex-row w-screen h-screen">
-        <div class="flex flex-col mr-20 h-auto w-auto">
-            <?php include_once "../component/sidebar.php" ?>
-        </div>
+    <div class="flex flex-row w-screen h-screen justify-center items-center">
+        <?php include_once "../component/sidebar.php" ?>
+        
         <div class="flex flex-col w-full h-screen">
             <div class="h-auto"><?php include_once "../component/menu.php" ?></div>
 
             <div class="flex justify-center items-center w-auto">
-                <div class="divider divider-neutral w-5"></div>
+                <div class="divider divider-neutral w-11/12"></div>
             </div>
 
-            <div class="flex flex-col justify-center items-center">
+            <div class="flex flex-col justify-center items-center w-full bg-slate-100">
                 <?php
                 if (isset($_GET['pt']) && $_GET['pt'] == "upload") {
                     include_once "./upload.php";

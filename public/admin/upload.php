@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php')
                     <div class="modal-box">
                         <h3 class="font-bold text-lg text-center">เพิ่มข้อมูลครุภัณฑ์</h3>
 
-                        <form action="/jaa/bookingphp/controller/product_upload.php" method="post" enctype="multipart/form-data">
+                        <form action="/jaa/borrowphp/controller/product_upload.php" method="post" enctype="multipart/form-data">
                             <div class="flex items-center justify-center mt-6">
                                 <label class="form-control w-full max-w-xs font-bold text-base text-black">
                                     <div class="label p-0">
@@ -124,7 +124,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php')
 
                                             <h3 class="font-bold text-black text-lg">แก้ไขข้อมูล</h3>
 
-                                            <form action="/jaa/bookingphp/controller/product_update.php" method="post" enctype="multipart/form-data">
+                                            <form action="/jaa/borrowphp/controller/product_update.php" method="post" enctype="multipart/form-data">
 
                                                 <div class="flex items-center justify-center mt-6">
                                                     <label class="form-control w-full max-w-xs font-bold text-base text-black">
@@ -189,7 +189,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php')
 
     </div>
 
-    <?php include "../../plugin/tailwind.php" ?>
     <?php include "../../plugin/script.php" ?>
     <script src="../js/product.js"></script>
     <script>

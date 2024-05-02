@@ -1,13 +1,13 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/vendor/autoload.php';
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["group"])) {
-        include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
         include_once('../plugin/script.php');
 
         $group = $_GET["group"];

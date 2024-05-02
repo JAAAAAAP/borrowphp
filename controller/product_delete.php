@@ -4,7 +4,7 @@
 
 
 if (isset($_POST['program']) && $_POST['program'] === 'del') {
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
     // include_once('../plugin/script.php');
 
     $newLocation = '../public/img/bin/';

@@ -2,7 +2,7 @@
 
 
 if (isset($_GET['approve']) && isset($_GET['o'])) {
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
     include_once('../plugin/script.php');
 
     $o_id = $_GET['o'];
@@ -50,7 +50,7 @@ if (isset($_GET['approve']) && isset($_GET['o'])) {
               });
             });
           </script>";
-            header("refresh:1.5; url=/jaa/bookingphp/public/admin/admin.php?pt=status");
+            header("refresh:1.5; url=/jaa/borrowphp/public/admin/admin.php?pt=status");
             exit;
         }
 

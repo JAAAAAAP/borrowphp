@@ -3,7 +3,7 @@
 
 if (isset($_POST['submit'])) {
     session_start();
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
     include_once('../plugin/script.php');
 
     $tel = htmlspecialchars($_POST['tel']);
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
                     });
                 });
             </script>";
-        header("refresh:1.5; url=/jaa/bookingphp/public/index.php");
+        header("refresh:1.5; url=/jaa/borrowphp/public/index.php");
         $conn = null;
     }
 }

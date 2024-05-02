@@ -1,10 +1,10 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/vendor/autoload.php';
 
 use Intervention\Image\ImageManagerStatic as Image;
 // ตรวจสอบว่ามีการอัปโหลดไฟล์หรือไม่
 if (isset($_POST['submit'])) {
-  include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+  include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
   include_once('../plugin/script.php');
 
   $id = $_POST['id'];
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
                       });
                   });
               </script>";
-      header("refresh:1.5; url=/jaa/bookingphp/public/admin/admin.php?pt=upload");
+      header("refresh:1.5; url=/jaa/borrowphp/public/admin/admin.php?pt=upload");
     } else {
       $targetDir = "../public/img/";
       $tmpname = $_FILES['filename']['tmp_name'];
@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
             });
           });
         </script>";
-  header("refresh:1.5; url=/jaa/bookingphp/public/admin/admin.php?pt=upload");
+  header("refresh:1.5; url=/jaa/borrowphp/public/admin/admin.php?pt=upload");
 }
    
    
@@ -191,7 +191,7 @@ if (isset($_POST['submit'])) {
   //   $stmt->execute();
 
   //   // ส่งกลับไปยังหน้าที่แสดงรายการสินค้าหลังจากอัปเดต
-  //   header("Location: /jaa/bookingphp/public/admin/upload.php");
+  //   header("Location: /jaa/borrowphp/public/admin/upload.php");
   //   exit();
   // }
 
@@ -211,7 +211,7 @@ if (isset($_POST['submit'])) {
   //               });
   //             });
   //           </script>";
-  //     header("refresh:1.5; url=/jaa/bookingphp/public/admin/upload.php");
+  //     header("refresh:1.5; url=/jaa/borrowphp/public/admin/upload.php");
   //   } else {
   //     $name = explode(".", $filename);
   //     $ext = $name[1];

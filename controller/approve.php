@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["group_id"])) {
-        include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
         include_once('../plugin/script.php');
 
         $group_id = $_POST["group_id"];
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     });
                 });
             </script>";
-            header("refresh:1.5; url=/jaa/bookingphp/public/approve.php");
+            header("refresh:1.5; url=/jaa/borrowphp/public/approve.php");
 
                 exit;
             }
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
 
             // Redirect back to the previous page
-            header("refresh:1.5; url=/jaa/bookingphp/public/approve.php");
+            header("refresh:1.5; url=/jaa/borrowphp/public/approve.php");
             exit;
         } else {
             echo "<script>
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     });
                 });
             </script>";
-            header("refresh:1.5; url=/jaa/bookingphp/public/approve.php");
+            header("refresh:1.5; url=/jaa/borrowphp/public/approve.php");
             exit;
         }
     } else {

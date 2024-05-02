@@ -2,7 +2,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["group"])) {
-        include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
         include_once('../plugin/script.php');
 
         $group = $_GET["group"];
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["p"])) {
-        include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/bookingphp/config/connectdb.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
         include_once('../plugin/script.php');
 
         $group = $_GET["p"];
