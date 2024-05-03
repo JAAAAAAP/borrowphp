@@ -37,7 +37,7 @@ $_SESSION["role"] == "1" ? " " :  header("Location:/public/index.php") . exit;
                 <div class="divider divider-neutral w-11/12"></div>
             </div>
 
-            <div class="flex flex-col justify-center items-center w-full bg-slate-100">
+            <div class="flex flex-col items-center w-full h-screen bg-slate-100">
                 <?php
                 if (isset($_GET['pt']) && $_GET['pt'] == "upload") {
                     include_once "./upload.php";
