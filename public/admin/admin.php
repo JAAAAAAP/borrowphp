@@ -33,7 +33,7 @@ $_SESSION["role"] == "1" ? " " :  header("Location:/public/index.php") . exit;
         <div class="flex flex-col w-full h-screen">
             <div class="h-auto"><?php include_once "../component/menu.php" ?></div>
 
-            <div class="flex justify-center items-center w-auto">
+            <div class="flex justify-center items-center  w-auto">
                 <div class="divider divider-neutral w-11/12"></div>
             </div>
 

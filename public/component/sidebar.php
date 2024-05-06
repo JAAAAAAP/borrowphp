@@ -11,7 +11,7 @@
         <input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
 
-        <div class="hidden drawer-content md:flex flex-col items-center fixed top-0 h-full w-20 bg-gray-950 text-white">
+        <div class="hidden drawer-content md:flex flex-col items-center fixed top-0 h-full w-20 bg-gray-950 shadow-xl text-white">
             <div class="mb-8 mt-4 text-4xl">
                 <i class='bx bx-book'></i>
             </div>

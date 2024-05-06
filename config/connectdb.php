@@ -1,6 +1,6 @@
 <?php
 $port = 13306;
-$dsn = "mysql:host=localhost;dbname=borrowphp;charset=utf8";
+$dsn = "mysql:host=localhost;port=13306;dbname=borrowphp;charset=utf8";
 $username = "root";
 $password = "";
 

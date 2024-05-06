@@ -27,7 +27,7 @@ $num_exit = count($exit_rs);
 
     <label for="my-drawer" class="drawer-button h-14 ">
         <div class="my-4 ml-3">
-            <div class="flex justify-start items-start text-4xl">
+            <div class="flex justify-start items-start text-4xl ">
                 <i class="bx bx-menu cursor-pointer"></i>
                 <span class="font-bold text-2xl ml-1">ระบบยืมคืน</span>
             </div>
