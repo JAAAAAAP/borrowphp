@@ -17,13 +17,31 @@
             </div>
             <ul class="menu justify-center items-center gap-6">
                 <li>
-                    <a href="admin.php?pt=status" class="tooltip tooltip-right w-full " data-tip="สถานะ">
-                        <i class='bx bx-grid-alt bx-sm'></i>
+                    <a href="admin.php?pt=waitapprove" class="tooltip tooltip-right w-full <?= strpos($url, 'admin.php?pt=waitapprove') ? "text-green-500 bg-white" : "" ?> " data-tip="รออนุมัติ">
+                        <i class='bx bx-user bx-sm'></i>
                     </a>
                 </li>
 
                 <li>
-                    <a href="admin.php?pt=upload" class="tooltip tooltip-right w-full " data-tip="เพิ่มรายการ">
+                    <a href="admin.php?pt=approve" class="tooltip tooltip-right w-full " data-tip="อนุมัติแล้ว">
+                        <i class='bx bx-check bx-sm'></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="admin.php?pt=approve" class="tooltip tooltip-right w-full " data-tip="กำลังยืม">
+                        <i class='bx bx-time bx-sm'></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="admin.php?pt=approve" class="tooltip tooltip-right w-full " data-tip="เลยกำหนด">
+                        <i class='bx bx-time-five bx-sm'></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin.php?pt=upload" class="tooltip tooltip-right w-full <?= strpos($url, 'admin.php?pt=upload') ? "text-green-500 bg-white" : "" ?>" data-tip="เพิ่มรายการ">
                         <i class='bx bx-plus bx-sm'></i>
                     </a>
                 </li>
@@ -53,25 +71,47 @@
                         <span>ระบบยืมคืน</span>
                     </div>
 
-                    <li>
-                        <a href="">
-                            <i class='bx bx-grid-alt bx-sm'></i>
-                            <span class="ml-4">สถานะ</span>
+                    <li class="w-full <?= strpos($url, 'admin.php?pt=waitapprove') ? "text-green-500 bg-white rounded-md" : "" ?>"">
+                        <a href="admin.php?pt=waitapprove">
+                            <i class='bx bx-user bx-sm'></i>
+                            <span class="ml-4">รออนุมัติ</span>
                         </a>
                     </li>
-                    <li>
+                    
+                    <li class="w-full">
+                        <a href="">
+                            <i class='bx bx-check bx-sm'></i>
+                            <span class="ml-4">อนุมัติแล้ว</span>
+                        </a>
+                    </li>
+                    
+                    <li class="w-full">
+                        <a href="">
+                            <i class='bx bx-time bx-sm'></i>
+                            <span class="ml-4">กำลังยืม</span>
+                        </a>
+                    </li>
+                    
+                    <li class="w-full">
+                        <a href="">
+                            <i class='bx bx-time-five bx-sm'></i>
+                            <span class="ml-4">เลยกำหนด</span>
+                        </a>
+                    </li class="w-full">
+
+                    <li class="w-full  <?= strpos($url, 'admin.php?pt=upload') ? "text-green-500 bg-white rounded-md" : "" ?>">
                         <a href="admin.php?pt=upload">
                             <i class='bx bx-plus bx-sm'></i>
                             <span class="ml-4">เพิ่มรายการ</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="w-full">
                         <a href="admin.php?pt=history">
                             <i class='bx bx-history bx-sm'></i>
                             <span class="ml-4">ประวัติ</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="w-full">
                         <a href="">
                             <i class='bx bx-cog bx-sm'></i>
                             <span class="ml-4">การตั้งค่า</span>

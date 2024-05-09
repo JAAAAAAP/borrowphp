@@ -1,6 +1,8 @@
 <?php
 session_start();
 $_SESSION["role"] == "1" ? " " :  header("Location:/public/index.php") . exit;
+
+$url = $_SERVER['REQUEST_URI'];
 ?>
 
 
@@ -30,23 +32,20 @@ $_SESSION["role"] == "1" ? " " :  header("Location:/public/index.php") . exit;
     <div class="flex flex-row w-screen h-screen justify-center items-center">
         <?php include_once "../component/sidebar.php" ?>
         
-        <div class="flex flex-col w-full h-screen">
+        <div class="flex flex-col w-full h-screen ">
             <div class="h-auto"><?php include_once "../component/menu.php" ?></div>
 
-            <div class="flex justify-center items-center  w-auto">
-                <div class="divider divider-neutral w-11/12"></div>
-            </div>
 
             <div class="flex flex-col items-center w-full h-screen bg-slate-100">
                 <?php
                 if (isset($_GET['pt']) && $_GET['pt'] == "upload") {
                     include_once "./upload.php";
-                } elseif (isset($_GET["pt"]) && $_GET["pt"] == "status") {
-                    include_once "./status.php";
+                } elseif (isset($_GET["pt"]) && $_GET["pt"] == "approve") {
+                    include_once "./waitapprove.php";
                 } elseif (isset($_GET["pt"]) && $_GET["pt"] == "history") {
                     include_once "./history.php";
                 } else {
-                    include_once "./status.php";
+                    include_once "./waitapprove.php";
                 }
                 ?>
             </div>
