@@ -5,8 +5,6 @@ if (session_status() == PHP_SESSION_NONE) {
 include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
 
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +22,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
     <!-- navbar -->
     <?php include_once("./component/navbar.php") ?>
 
-    <div class="text-end mr-4">
-        <select class="select select-bordered w-36 select-sm mt-8 md:w-48">
-            <option disabled selected>Who shot first?</option>
-            <option>Han Solo</option>
-            <option>Greedo</option>
-        </select>
-    </div>
 
     <div class="flex flex-col ">
         <?php
@@ -44,7 +35,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
             foreach ($rs as $row) {
                 $imgUrl = './img/' . $row['img'];
         ?>
-                <div class="flex m-4 gap-4 bg-base-100 shadow-xl rounded-md  <?= $row['amount'] > 0 ? "" : "hidden" ?>">
+                <div class="flex m-4 gap-4 bg-base-100 shadow-xl border-2 rounded-md  <?= $row['amount'] > 0 ? "" : "hidden" ?>">
                     <figure>
                         <img class=" rounded-md w-40 h-full md:w-40" src="<?= $imgUrl ?>" />
                     </figure>
@@ -63,8 +54,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
                         </div>
                     </div>
                 </div>
-                <div class="divider"></div>
-        <?php
+                <?php
             }
         }
         ?>

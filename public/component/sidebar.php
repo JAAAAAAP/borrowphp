@@ -16,26 +16,28 @@
                 <i class='bx bx-book'></i>
             </div>
             <ul class="menu justify-center items-center gap-6">
+                
                 <li>
-                    <a href="admin.php?pt=waitapprove" class="tooltip tooltip-right w-full <?= strpos($url, 'admin.php?pt=waitapprove') ? "text-green-500 bg-white" : "" ?> " data-tip="รออนุมัติ">
-                        <i class='bx bx-user bx-sm'></i>
+                    <a href="admin.php?pt=report" class="tooltip tooltip-right w-full <?= strpos($url, 'admin.php?pt=report') ? "text-green-500 bg-white" : "" ?>" data-tip="รายงาน">
+                        <i class='bx bxs-report bx-sm'></i>
                     </a>
                 </li>
 
                 <li>
-                    <a href="admin.php?pt=approve" class="tooltip tooltip-right w-full " data-tip="อนุมัติแล้ว">
-                        <i class='bx bx-check bx-sm'></i>
+                    <a href="admin.php?pt=approve" class="tooltip tooltip-right w-full <?= strpos($url, 'admin.php?pt=approve') ? "text-green-500 bg-white" : "" ?> " data-tip="การอนุมัติ">
+                        <i class='bx bx-user bx-sm'></i>
                     </a>
                 </li>
-                
+
+
                 <li>
-                    <a href="admin.php?pt=approve" class="tooltip tooltip-right w-full " data-tip="กำลังยืม">
+                    <a href="admin.php?pt=borrow" class="tooltip tooltip-right w-full <?= strpos($url, 'admin.php?pt=borrow') ? "text-green-500 bg-white" : "" ?>" data-tip="กำลังยืม">
                         <i class='bx bx-time bx-sm'></i>
                     </a>
                 </li>
-                
+
                 <li>
-                    <a href="admin.php?pt=approve" class="tooltip tooltip-right w-full " data-tip="เลยกำหนด">
+                    <a href="admin.php?pt=late" class="tooltip tooltip-right w-full <?= strpos($url, 'admin.php?pt=late') ? "text-green-500 bg-white" : "" ?>"" data-tip=" เลยกำหนด">
                         <i class='bx bx-time-five bx-sm'></i>
                     </a>
                 </li>
@@ -46,11 +48,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="admin.php?pt=history" class="tooltip tooltip-right w-full " data-tip="ประวัติ">
-                        <i class='bx bx-history bx-sm'></i>
-                    </a>
-                </li>
 
                 <li>
                     <a href="" class="tooltip tooltip-right w-full " data-tip="การตั้งค่า">
@@ -71,29 +68,29 @@
                         <span>ระบบยืมคืน</span>
                     </div>
 
-                    <li class="w-full <?= strpos($url, 'admin.php?pt=waitapprove') ? "text-green-500 bg-white rounded-md" : "" ?>"">
-                        <a href="admin.php?pt=waitapprove">
-                            <i class='bx bx-user bx-sm'></i>
-                            <span class="ml-4">รออนุมัติ</span>
+                    <li class="w-full <?= strpos($url, 'admin.php?pt=report') ? "text-green-500 bg-white rounded-md" : "" ?>">
+                        <a href="admin.php?pt=report">
+                            <i class='bx bxs-report'></i>
+                            <span class="ml-4">รายงาน</span>
                         </a>
                     </li>
-                    
-                    <li class="w-full">
-                        <a href="">
-                            <i class='bx bx-check bx-sm'></i>
-                            <span class="ml-4">อนุมัติแล้ว</span>
+
+                    <li class="w-full <?= strpos($url, 'admin.php?pt=approve') ? "text-green-500 bg-white rounded-md" : "" ?>"">
+                        <a href=" admin.php?pt=approve">
+                        <i class='bx bx-user bx-sm'></i>
+                        <span class="ml-4">การอนุมัติ</span>
                         </a>
                     </li>
-                    
-                    <li class="w-full">
-                        <a href="">
+
+                    <li class="w-full <?= strpos($url, 'admin.php?pt=borrow') ? "text-green-500 bg-white rounded-md" : "" ?>">
+                        <a href="admin.php?pt=borrow">
                             <i class='bx bx-time bx-sm'></i>
                             <span class="ml-4">กำลังยืม</span>
                         </a>
                     </li>
-                    
-                    <li class="w-full">
-                        <a href="">
+
+                    <li class="w-full <?= strpos($url, 'admin.php?pt=late') ? "text-green-500 bg-white rounded-md" : "" ?>">
+                        <a href="admin.php?pt=late">
                             <i class='bx bx-time-five bx-sm'></i>
                             <span class="ml-4">เลยกำหนด</span>
                         </a>
@@ -105,12 +102,7 @@
                             <span class="ml-4">เพิ่มรายการ</span>
                         </a>
                     </li>
-                    <li class="w-full">
-                        <a href="admin.php?pt=history">
-                            <i class='bx bx-history bx-sm'></i>
-                            <span class="ml-4">ประวัติ</span>
-                        </a>
-                    </li>
+
                     <li class="w-full">
                         <a href="">
                             <i class='bx bx-cog bx-sm'></i>

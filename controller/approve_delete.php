@@ -21,9 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         include_once('../plugin/script.php');
 
         $group = $_GET["p"];
-        $groupid_sql = 'DELETE FROM oder_product WHERE p_id = :p_id';
+        $groupid_sql = 'DELETE FROM oder_product WHERE o_id = :o_id';
         $groupid_query = $conn->prepare($groupid_sql);
-        $groupid_query->bindParam(':p_id', $group, PDO::PARAM_INT);
+        $groupid_query->bindParam(':o_id', $group, PDO::PARAM_INT);
         $groupid_query->execute();
 
         echo "<script>window.history.back();</script>";

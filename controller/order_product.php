@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $department = htmlspecialchars($_POST['department']);
     $date_start = htmlspecialchars($_POST['date-start']);
     $date_end = htmlspecialchars($_POST['date-end']);
-    
+
     do {
         $group_id = rand(1, 10000);
         $check_group_sql = "SELECT COUNT(*) AS count FROM oder_product WHERE group_id = :group_id";
@@ -45,6 +45,48 @@ if (isset($_POST['submit'])) {
     $order_query->execute();
 
     if ($order_query) {
+        $sql = "SELECT o.*, u.user_id, u.user
+        FROM oder_product AS o
+        INNER JOIN user AS u ON o.user_id = u.user_id
+        WHERE o.group_id = :group_id AND o.user_id = :user_id";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":user_id", $_SESSION['id'], PDO::PARAM_INT);
+        $query->bindParam(":group_id", $group_id, PDO::PARAM_INT);
+        $query->execute();
+        $rs = $query->fetch(PDO::FETCH_ASSOC);
+
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+        date_default_timezone_set("Asia/Bangkok");
+
+        $sToken = "2fNscWyNE9kPYnR8xZmThiLLO4Xq91glzCrwRkwK874";
+        $sMessage = "\nมีผู้ใช้ทำรายการยืมคืนครุภัณฑ์ \n";
+        $sMessage .= "เวลา : " .  date("d-m-Y H:i", strtotime($rs['dates_now'])) . "\n";
+        $sMessage .= "ผู้ใช้งาน : " . $rs['user'] . "\n";
+
+
+        $chOne = curl_init();
+        curl_setopt($chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
+        curl_setopt($chOne, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($chOne, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($chOne, CURLOPT_POST, 1);
+        curl_setopt($chOne, CURLOPT_POSTFIELDS, "message=" . $sMessage);
+        $headers = array('Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $sToken . '',);
+        curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
+        $result = curl_exec($chOne);
+
+        //Result error 
+        if (curl_error($chOne)) {
+            echo 'error:' . curl_error($chOne);
+        } else {
+            $result_ = json_decode($result, true);
+            echo "status : " . $result_['status'];
+            echo "message : " . $result_['message'];
+        }
+        curl_close($chOne);
+
         echo "<script>
             $(document).ready(function() {
                     Swal.fire({

@@ -1,4 +1,5 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/controller/checklogout.php');
 
 $sql = "SELECT COUNT(*) FROM oder_product WHERE user_id = :id AND status = 'รอดำเนินการ' ";
 $query = $conn->prepare($sql);

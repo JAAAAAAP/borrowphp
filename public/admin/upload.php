@@ -9,7 +9,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
 <!-- loading -->
 
 
-<div class="flex flex-col items-center justify-center bg-slate-100">
+<div class="flex flex-col w-11/12 h-auto items-center justify-center">
     <div class="flex w-11/12">
         <div class="flex w-full justify-end">
             <label for="add" class="btn btn-success text-white">เพิ่มข้อมูล</label>
@@ -63,13 +63,13 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
 
     <div class="flex w-11/12 justify-center items-center mt-4">
         <div class="overflow-x-auto w-full border-2 rounded-xl border-gray-400 text-gray-600">
-            <table class="table-fixed text-center justify-center items-center w-full ">
+            <table class="table text-nowrap text-center justify-center items-center">
                 <!-- head -->
-                <thead class="border-b-2 border-gray-400 h-16 ">
+                <thead class="border-b-2 font-bold text-base text-black border-gray-400 h-16 ">
                     <tr class="bg-slate-200">
-                        <th class="w-12">No.</th>
-                        <th class="w-96">รายละเอียดอุปกรณ์</th>
-                        <th class="w-40">รูป</th>
+                        <th class="">No.</th>
+                        <th class="">รายละเอียดอุปกรณ์</th>
+                        <th class="">รูป</th>
                         <th class="">จำนวนคงเหลือ</th>
                         <th class="">แก้ไข</th>
                         <th class="">ลบ</th>
@@ -101,7 +101,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/jaa/borrowphp/config/connectdb.php');
                                 <span class="">หมายเลขครุภัณฑ์ : <?php echo $row['sn_products'] ?></span>
                             </td>
                             <td>
-                                <figure class="flex w-full h-28 justify-center items-center"><img class="h-28 w-40" src="<?php echo $imgUrl ?>" alt=""></figure>
+                                <figure class="flex h-28 justify-center items-center"><img class="h-28 w-40" src="<?php echo $imgUrl ?>" alt=""></figure>
                             </td>
                             <td class="w-16 text-xl"><?php echo $row['amount'] ?></td>
 

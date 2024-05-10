@@ -1,4 +1,5 @@
 <?php
+// 2fNscWyNE9kPYnR8xZmThiLLO4Xq91glzCrwRkwK874
 $port = 13306;
 $dsn = "mysql:host=localhost;dbname=borrowphp;charset=utf8";
 $username = "root";

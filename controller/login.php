@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
-    
+
     try {
         $sql = "SELECT * FROM user WHERE user = :user AND password = :password";
         $checkdata = $conn->prepare($sql);
@@ -19,6 +19,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['id'] = $row['user_id'];
             $_SESSION['user'] = $row['user'];
             $_SESSION['role'] = $row['role'];
+
+            $sql = "INSERT INTO log(u_id, time_in) VALUES (:u_id, NOW())";
+            $log = $conn->prepare($sql);
+            $log->bindParam(":u_id", $_SESSION['id'], PDO::PARAM_INT);
+            $log->execute();
+
+            $sql = "SELECT log_id FROM log WHERE u_id = :u_id ORDER BY log_id DESC LIMIT 1";
+            $logIdQuery = $conn->prepare($sql);
+            $logIdQuery->bindParam(":u_id", $_SESSION['id'], PDO::PARAM_INT);
+            $logIdQuery->execute();
+            $log_row = $logIdQuery->fetch(PDO::FETCH_ASSOC);
+
+            $_SESSION['log_id'] = $log_row['log_id'];
+            $_SESSION['expire_time'] = time() + 10800;
 
             if ($_SESSION['role'] == 0) {
                 $response['redirect'] = '/jaa/borrowphp/public/index.php';
@@ -39,4 +53,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-?>

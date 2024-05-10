@@ -20,7 +20,7 @@ if (isset($_GET['approve']) && isset($_GET['o'])) {
         $return_query->bindParam(':total_amount', $amount, PDO::PARAM_INT);
         $return_query->execute();
 
-        $status_sql = 'UPDATE oder_product SET status = :status WHERE o_id = :o_id';
+        $status_sql = 'UPDATE oder_product SET status = :status,date_end = NOW() WHERE o_id = :o_id';
         $status_query = $conn->prepare($status_sql);
         $status_query->bindParam(':o_id', $o_id, PDO::PARAM_INT);
         $status = "คืนแล้ว";
